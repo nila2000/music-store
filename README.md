@@ -22,4 +22,4 @@ $ cd angularclient
 $ npm install
 $ ng serve
 ```
-Run browser and head to ```http://localhost:4200```
+Run browser and browse this url ---->  ```http://localhost:4200```
