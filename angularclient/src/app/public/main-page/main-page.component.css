@@ -1,0 +1,35 @@
+div {
+width: auto;
+text-align: center;
+padding: 15px;
+/* border: 3px solid red; */
+}
+img {
+max-width: 120%;
+height: auto;
+}
+
+
+/* class="img-fluid" */
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad-hov {
+    background-position:center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+

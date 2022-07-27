@@ -1,0 +1,9 @@
+.active{
+    cursor:pointer;
+}
+
+
+.l-bg-cherry {
+    background: linear-gradient(to right, #493240, #f09) !important;
+    color: #fff;
+}

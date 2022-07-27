@@ -1,0 +1,8 @@
+.alert{
+    white-space: pre-line;
+}
+
+.l-bg-green-dark {
+    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+    color: #fff;
+}

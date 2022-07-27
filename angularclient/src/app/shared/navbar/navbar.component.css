@@ -1,0 +1,19 @@
+/* #clock{
+    color: white;
+    font-weight: bold;
+} */
+
+.fa{
+    color: rgb(16, 16, 16);
+    font-weight: bold;
+}
+
+.navbar-brand{
+    color: rgb(16, 16, 16);
+    font-weight: bold;
+}
+
+.nav-item {
+    color: rgb(16, 16, 16);
+    font-weight: bold;
+}

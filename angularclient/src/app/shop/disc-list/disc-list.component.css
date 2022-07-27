@@ -1,0 +1,9 @@
+a > img{
+   width: 100px;
+    height: 100px;
+}
+
+.l-bg-cherry {
+    background: linear-gradient(to right, #493240, #f09) !important;
+    color: #fff;
+}

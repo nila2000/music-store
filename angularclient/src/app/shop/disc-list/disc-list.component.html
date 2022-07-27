@@ -1,0 +1,74 @@
+
+
+
+
+<div class="container">
+  <div class="col-xl-11 col-lg-6">
+    <div class="card l-bg-cherry">
+  <!-- <div class="card my-5"> -->
+    <div class="card-body">
+      <div *ngIf="bought">
+        <div class="alert alert-success" role="alert">
+          {{ text }}
+          <mat-progress-bar [value]="value"></mat-progress-bar>
+        </div>
+      </div>
+      <mat-form-field class="my-2 mx-2">
+        <input matInput placeholder="Search" [(ngModel)]="query">
+        <mat-hint>By title or band name</mat-hint>
+      </mat-form-field>
+      <table class="table table-hover table-striped table-dark">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">
+              <div (click)="sortList(1)">#ID</div>
+            </th>
+            <th scope="col">Cover</th>
+            <th scope="col">
+              <div (click)="sortList(2)">Band</div>
+            </th>
+            <th scope="col">
+              <div (click)="sortList(3)">Title</div>
+            </th>
+            <th scope="col">
+              <div (click)="sortList(4)">Price</div>
+            </th>
+            <th scope="col">
+              Category
+            </th>
+            <th scope="col">Buy</th>
+            <div *ngIf="authService.hasAdminRole()">
+              <th scope="col">Delete </th>
+              <th scope="col">Edit</th>
+            </div>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let disc of discs | filterList:query; let i=index ">
+            <td>{{ disc.id }}</td>
+            <td><a [routerLink]="['/disc', disc.id]"><img [src]="disc.images[0]"></a></td>
+            <td><a [routerLink]="['/disc', disc.id]">{{ disc.band }}</a></td>
+            <td>{{ disc.title }}</td>
+            <td>{{ disc.price }}</td>
+            <td>{{ disc.category.name }}</td>
+            <td>
+              <form (ngSubmit)="buyItem(disc.id, disc[i])" #userForm="ngForm">
+                <input type="text" [(ngModel)]='disc[i]' name='disc[i]' />
+                <button type="submit" class="btn btn-primary">Buy</button>
+              </form>
+            </td>
+            <div *ngIf="authService.hasAdminRole()">
+              <td>
+                <button type="submit" (click)="remove(disc.id)" class="btn btn-danger">Remove</button>
+              </td>
+              <td>
+                <button class="btn btn-warning" [routerLink]="['/edit', disc.id]">Edit</button>
+              </td>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

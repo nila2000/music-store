@@ -1,0 +1,52 @@
+<div class="col-xl-9 col-lg-6 mx-auto">
+ 
+      <div class="card-statistic-3 p-4">
+       
+
+<div class="container">
+  <div class="card my-5">
+    <div class="card-body">
+      <div class="card l-bg-green-dark align-items-center">
+      <div *ngIf="items">
+        <table class="table table-bordered table-dark">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Band</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Price</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let disc of items.list">
+              <td>{{ disc.disc.id }}</td>
+              <td>{{ disc.disc.band }}</td>
+              <td>{{ disc.amount }}</td>
+              <td>{{ disc.disc.price * disc.amount }}INR</td>
+              <td>
+                <form (ngSubmit)="remove(disc.id)" #userForm="ngForm">
+                  <button type="submit" class="btn btn-primary">Remove</button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5>Total: {{ sum }}INR</h5>
+      <form (ngSubmit)="buy()" #userForm="ngForm">
+        <button type="submit" class="btn btn-success">Buy it!</button>
+      </form>
+
+      <div *ngIf="isError">
+          <div class="alert alert-danger my-1" role="alert">
+          {{ error }} <div *ngIf="showRedirect"><a routerLink="/profile">Click here </a> to update your profile</div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+</div>

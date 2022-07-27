@@ -1,0 +1,35 @@
+
+
+
+<div class="container">
+  
+  <div class="card l-bg-orange-dark align-items-center">
+    <div class="col-xl-3 col-lg-3 mx-auto"></div>
+    <div class="card-body" >
+      <table class="table table-hover table-dark">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Items</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders; let i = index">
+            <td>{{ order.orderID }}</td>
+            <td>{{ order.orderDate }}</td>
+            <td>
+              <div *ngFor="let disc of order.discs">
+                {{ disc.disc.band }} - {{ disc.disc.title }}
+              </div>
+            </td>
+            <td>
+              {{ calculateSum(i) }}INR
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
